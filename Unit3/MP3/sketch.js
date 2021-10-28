@@ -7,12 +7,18 @@ let monkeyPos;
 var jungle
 var bananabunch
 var monkeycharacter
+var titlemonkey
+var winbacking
+var losebacking
 
 function setup() {
   createCanvas(700, 700);
   jungle = loadImage("assets/jungle.jpg");
   bananabunch = loadImage("assets/bananabunch.png");
   monkeycharacter = loadImage("assets/monkeycharacter.png");
+  titlemonkey = loadImage("assets/titlemonkey.jpg");
+  winbacking = loadImage("assets/winbacking.jpg");
+  losebacking = loadImage("assets/losebacking.jpg");
 
 
 
@@ -27,7 +33,7 @@ function setup() {
 function draw() {
   switch (state) {
     case 0:
-      background("green");
+      image(titlemonkey, 0, 0, 700, 700);
       textSize(70);
       text("Monkey Madness", 100, 250);
       textSize(30);
@@ -46,7 +52,7 @@ function draw() {
       break; //monkey game
 
     case 2:
-      background("purple");
+      image(winbacking, 0, 0, 700, 700);
       fill("green");
       textSize(80)
       text("YOU WON!", 150, 220);
@@ -57,7 +63,7 @@ function draw() {
       break; //collect all bananas
 
     case 3:
-      background("blue");
+      image(losebacking, 0, 0, 700, 700);
       fill("white");
       textSize(70)
       text("Too Bad!", 220, 250);
